@@ -1,5 +1,9 @@
+import { LoginForm } from 'components/LoginForm/LoginForm';
+import { useSelector } from 'react-redux';
+
 const Login = () => {
-  return <div></div>;
+  const { isLoggedIn } = useSelector(state => state.auth);
+  return !isLoggedIn && <LoginForm />;
 };
 
 export default Login;

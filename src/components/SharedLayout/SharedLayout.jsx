@@ -10,8 +10,13 @@ export const SharedLayout = () => {
       <header>
         <nav>
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/register">Register</NavLink>
-          <NavLink to="/login">Login</NavLink>
+          {!isLoggedIn && (
+            <>
+              {' '}
+              <NavLink to="/register">Register</NavLink>
+              <NavLink to="/login">Login</NavLink>
+            </>
+          )}
         </nav>
         {isLoggedIn && <UserMenu name={name} />}
       </header>

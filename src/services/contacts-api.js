@@ -20,3 +20,13 @@ export const logoutUser = async () => {
   const resp = await axios.post('/users/logout');
   return resp;
 };
+
+export const loginUser = async data => {
+  const resp = await axios.post('/users/login', data);
+  return resp;
+};
+
+export const getCurrentUser = async () => {
+  const resp = await axios.get('/users/current');
+  return resp;
+};
