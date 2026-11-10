@@ -30,3 +30,18 @@ export const getCurrentUser = async () => {
   const resp = await axios.get('/users/current');
   return resp;
 };
+
+export const fetchContacts = async () => {
+  const resp = await axios('/contacts');
+  return resp;
+};
+
+export const postContact = async data => {
+  const resp = await axios.post('/contacts', data);
+  return resp;
+};
+
+export const removeContact = async id => {
+  const resp = await axios.delete(`/contacts/${id}`);
+  return resp;
+};

@@ -1,0 +1,85 @@
+import { Formik } from 'formik';
+import * as Yup from 'yup';
+import 'yup-phone';
+import { TextField, Button, Box } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { addContact } from '../../redux/contacts/operations';
+import { useContacts } from '../../hooks/useContacts';
+
+const Schema = Yup.object().shape({
+  name: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
+  number: Yup.string().phone('UA', true).required('Required'),
+});
+
+const isInContactsList = ({ name }, contacts) => {
+  return contacts.find(
+    contact => contact.name.toLowerCase() === name.toLowerCase().trim()
+  );
+};
+
+export const ContactForm = () => {
+  const { contacts } = useContacts();
+  const dispatch = useDispatch();
+
+  return (
+    <Formik
+      initialValues={{
+        name: '',
+        number: '',
+      }}
+      validationSchema={Schema}
+      onSubmit={(values, { resetForm }) => {
+        // same shape as initial values
+        console.log(values);
+        if (isInContactsList(values, contacts)) {
+          alert('This contact already exsist');
+          return;
+        }
+        dispatch(addContact(values));
+        resetForm();
+      }}
+    >
+      {({ values, errors, touched, handleChange, handleSubmit }) => (
+        <Box
+          component="form"
+          sx={{
+            display: 'flex',
+            gap: '20px',
+            flexDirection: 'column',
+            padding: '50px',
+          }}
+          onSubmit={handleSubmit}
+        >
+          <TextField
+            error={errors.name && touched.name}
+            helperText={errors.name}
+            variant="standard"
+            label="Name"
+            type="text"
+            name="name"
+            onChange={handleChange}
+            value={values.name}
+          />
+
+          <TextField
+            error={errors.number && touched.number}
+            helperText={errors.number}
+            variant="standard"
+            label="Phone number"
+            type="text`"
+            name="number"
+            onChange={handleChange}
+            value={values.number}
+          />
+
+          <Button variant="contained" type="submit">
+            Add contact
+          </Button>
+        </Box>
+      )}
+    </Formik>
+  );
+};

@@ -8,6 +8,7 @@ const initialState = {
   },
   token: null,
   isLoggedIn: false,
+  isRefreshing: false,
 };
 
 export const authSlice = createSlice({
@@ -31,9 +32,16 @@ export const authSlice = createSlice({
         state.token = payload.token;
         state.isLoggedIn = true;
       })
+      .addCase(refresh.pending, state => {
+        state.isRefreshing = true;
+      })
       .addCase(refresh.fulfilled, (state, { payload }) => {
         state.user = payload;
         state.isLoggedIn = true;
+        state.isRefreshing = false;
+      })
+      .addCase(refresh.rejected, state => {
+        state.isRefreshing = false;
       }),
 });
 
