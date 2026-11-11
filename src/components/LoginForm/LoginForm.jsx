@@ -24,8 +24,8 @@ export const LoginForm = () => {
           password: '',
         }}
         validationSchema={loginSchema}
-        onSubmit={(values, { resetForm }) => {
-          dispatch(login(values));
+        onSubmit={async (values, { resetForm }) => {
+          await dispatch(login(values)).unwrap();
           resetForm();
         }}
       >

@@ -16,7 +16,7 @@ export const App = () => {
 
   useEffect(() => {
     dispatch(refresh());
-  });
+  }, [dispatch]);
   return (
     <Suspense fallback={<p>Loading...</p>}>
       <Routes>

@@ -35,8 +35,8 @@ export const RegisterForm = () => {
           password: '',
         }}
         validationSchema={registrationSchema}
-        onSubmit={(values, { resetForm }) => {
-          dispatch(register(values));
+        onSubmit={async (values, { resetForm }) => {
+          await dispatch(register(values)).unwrap();
           resetForm();
         }}
       >

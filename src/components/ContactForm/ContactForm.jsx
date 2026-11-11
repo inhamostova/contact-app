@@ -14,9 +14,11 @@ const Schema = Yup.object().shape({
   number: Yup.string().phone('UA', true).required('Required'),
 });
 
-const isInContactsList = ({ name }, contacts) => {
+const isInContactsList = ({ name, id }, contacts) => {
   return contacts.find(
-    contact => contact.name.toLowerCase() === name.toLowerCase().trim()
+    contact =>
+      contact.id !== id &&
+      contact.name.toLowerCase() === name.toLowerCase().trim()
   );
 };
 
@@ -43,10 +45,15 @@ export const ContactForm = ({
       }}
       validationSchema={Schema}
       onSubmit={(values, { resetForm }) => {
-        if (isInContactsList(values, contacts)) {
+        if (isInContactsList({ id: contact.id, ...values }, contacts)) {
           alert('This contact already exsist');
           return;
         }
+
+        // if (isInContactsList(values, contacts)) {
+        //   alert('This contact already exsist');
+        //   return;
+        // }
         handleDispatch(values);
         resetForm();
         onClose();
