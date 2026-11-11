@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { AppBar } from 'components/AppBar/AppBar';
+import { Bar } from 'components/Bar/Bar';
 // import { useSelector } from 'react-redux';
 import { useAuth } from '../../hooks/useAuth';
 
@@ -8,7 +8,7 @@ export const SharedLayout = () => {
   return (
     !isRefreshing && (
       <div>
-        <AppBar />
+        <Bar />
         <Outlet />
       </div>
     )
