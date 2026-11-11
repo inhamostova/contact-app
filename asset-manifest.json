@@ -1,23 +1,17 @@
 {
   "files": {
-    "main.css": "/contact-app/static/css/main.7acaea2f.css",
-    "main.js": "/contact-app/static/js/main.15a8d68d.js",
-    "static/js/415.2674d0a0.chunk.js": "/contact-app/static/js/415.2674d0a0.chunk.js",
-    "static/js/236.987f8f34.chunk.js": "/contact-app/static/js/236.987f8f34.chunk.js",
-    "static/js/111.70bad2a9.chunk.js": "/contact-app/static/js/111.70bad2a9.chunk.js",
-    "static/js/116.120755f2.chunk.js": "/contact-app/static/js/116.120755f2.chunk.js",
-    "static/js/273.7fdacb27.chunk.js": "/contact-app/static/js/273.7fdacb27.chunk.js",
-    "index.html": "/contact-app/index.html",
-    "main.7acaea2f.css.map": "/contact-app/static/css/main.7acaea2f.css.map",
-    "main.15a8d68d.js.map": "/contact-app/static/js/main.15a8d68d.js.map",
-    "415.2674d0a0.chunk.js.map": "/contact-app/static/js/415.2674d0a0.chunk.js.map",
-    "236.987f8f34.chunk.js.map": "/contact-app/static/js/236.987f8f34.chunk.js.map",
-    "111.70bad2a9.chunk.js.map": "/contact-app/static/js/111.70bad2a9.chunk.js.map",
-    "116.120755f2.chunk.js.map": "/contact-app/static/js/116.120755f2.chunk.js.map",
-    "273.7fdacb27.chunk.js.map": "/contact-app/static/js/273.7fdacb27.chunk.js.map"
+    "main.css": "/contact-app/static/css/main.4f07737f.css",
+    "main.js": "/contact-app/static/js/main.54128465.js",
+    "static/js/157.36816956.chunk.js": "/contact-app/static/js/157.36816956.chunk.js",
+    "static/js/931.7578506d.chunk.js": "/contact-app/static/js/931.7578506d.chunk.js",
+    "static/js/633.567e2dc5.chunk.js": "/contact-app/static/js/633.567e2dc5.chunk.js",
+    "static/js/958.900b2b7f.chunk.js": "/contact-app/static/js/958.900b2b7f.chunk.js",
+    "static/js/166.5d6877d5.chunk.js": "/contact-app/static/js/166.5d6877d5.chunk.js",
+    "static/js/907.0d61fb11.chunk.js": "/contact-app/static/js/907.0d61fb11.chunk.js",
+    "index.html": "/contact-app/index.html"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.15a8d68d.js"
+    "static/css/main.4f07737f.css",
+    "static/js/main.54128465.js"
   ]
 }

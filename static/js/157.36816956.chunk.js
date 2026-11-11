@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[157],{9157:function(e,t,c){c.r(t);var r=c(6417);t.default=function(){return(0,r.jsx)("div",{children:(0,r.jsx)("h1",{children:"Welcome to your contacts APP!!!"})})}}}]);
