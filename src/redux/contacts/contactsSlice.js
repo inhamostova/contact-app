@@ -1,5 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addContact, deleteContact, getContacts } from './operations';
+import {
+  addContact,
+  deleteContact,
+  editContact,
+  getContacts,
+} from './operations';
 
 export const contactsSlice = createSlice({
   name: 'contacts',
@@ -44,6 +49,20 @@ export const contactsSlice = createSlice({
         state.error = null;
       })
       .addCase(deleteContact.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(editContact.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(editContact.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        const itemToUpdate = state.items.find(item => item.id === payload.id);
+        itemToUpdate.name = payload.name;
+        itemToUpdate.number = payload.number;
+        state.error = null;
+      })
+      .addCase(editContact.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       }),

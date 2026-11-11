@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import 'yup-phone';
 import { TextField, Button, Box } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contacts/operations';
+import { addContact, editContact } from '../../redux/contacts/operations';
 import { useContacts } from '../../hooks/useContacts';
 
 const Schema = Yup.object().shape({
@@ -20,15 +20,26 @@ const isInContactsList = ({ name }, contacts) => {
   );
 };
 
-export const ContactForm = ({ onClose }) => {
+export const ContactForm = ({
+  onClose,
+  textBtn,
+  isEdit = false,
+  contact = null,
+}) => {
   const { contacts } = useContacts();
   const dispatch = useDispatch();
+
+  const handleDispatch = values => {
+    !isEdit
+      ? dispatch(addContact(values))
+      : dispatch(editContact({ id: contact.id, ...values }));
+  };
 
   return (
     <Formik
       initialValues={{
-        name: '',
-        number: '',
+        name: isEdit ? contact.name : '',
+        number: isEdit ? contact.number : '',
       }}
       validationSchema={Schema}
       onSubmit={(values, { resetForm }) => {
@@ -36,7 +47,7 @@ export const ContactForm = ({ onClose }) => {
           alert('This contact already exsist');
           return;
         }
-        dispatch(addContact(values));
+        handleDispatch(values);
         resetForm();
         onClose();
       }}
@@ -75,7 +86,7 @@ export const ContactForm = ({ onClose }) => {
           />
 
           <Button variant="contained" type="submit">
-            Add contact
+            {textBtn}
           </Button>
         </Box>
       )}

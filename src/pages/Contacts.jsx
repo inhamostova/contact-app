@@ -48,7 +48,7 @@ const Contacts = () => {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <ContactForm onClose={handleClose} />
+            <ContactForm onClose={handleClose} textBtn={'Add contact'} />
           </Box>
         </Fade>
       </Modal>

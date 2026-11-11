@@ -45,3 +45,8 @@ export const removeContact = async id => {
   const resp = await axios.delete(`/contacts/${id}`);
   return resp;
 };
+
+export const patchContact = async (id, data) => {
+  const resp = await axios.patch(`/contacts/${id}`, data);
+  return resp;
+};
