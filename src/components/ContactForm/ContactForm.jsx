@@ -9,7 +9,7 @@ import { useContacts } from '../../hooks/useContacts';
 const Schema = Yup.object().shape({
   name: Yup.string()
     .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
+    .max(30, 'Too Long!')
     .required('Required'),
   number: Yup.string().phone('UA', true).required('Required'),
 });
@@ -20,7 +20,7 @@ const isInContactsList = ({ name }, contacts) => {
   );
 };
 
-export const ContactForm = () => {
+export const ContactForm = ({ onClose }) => {
   const { contacts } = useContacts();
   const dispatch = useDispatch();
 
@@ -32,14 +32,13 @@ export const ContactForm = () => {
       }}
       validationSchema={Schema}
       onSubmit={(values, { resetForm }) => {
-        // same shape as initial values
-        console.log(values);
         if (isInContactsList(values, contacts)) {
           alert('This contact already exsist');
           return;
         }
         dispatch(addContact(values));
         resetForm();
+        onClose();
       }}
     >
       {({ values, errors, touched, handleChange, handleSubmit }) => (

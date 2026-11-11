@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getContacts } from '../../redux/contacts/operations';
 import { useContacts } from '../../hooks/useContacts';
+import Grid from '@mui/material/Grid';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -13,12 +14,12 @@ export const ContactList = () => {
   }, [dispatch]);
 
   return (
-    <ul>
+    <Grid container spacing={2}>
       {contacts.map(contact => (
-        <li key={contact.id}>
+        <Grid size={{ xs: 12, sm: 6 }} key={contact.id}>
           <ContactItem contact={contact} />
-        </li>
+        </Grid>
       ))}
-    </ul>
+    </Grid>
   );
 };
