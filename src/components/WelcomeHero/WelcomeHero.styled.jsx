@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { Button } from '@mui/material';
 
 export const Container = styled.div`
   padding: 72px 20px;
@@ -14,14 +13,14 @@ export const ContainerFlex = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  max-width: 320px;
   font-family: 'Roboto', sans-serif;
   color: #2c2c2c;
 `;
 
-export const Btn = styled(Button)`
-  left: 50%;
-  transform: translateX(-50%);
+export const Btn = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Title = styled.h1`

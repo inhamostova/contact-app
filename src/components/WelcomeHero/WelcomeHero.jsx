@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import book from '../../images/book.png';
 import {
   Container,
@@ -23,13 +24,16 @@ export const WelcomeHero = () => {
         </Wrapper>
         <img src={book} alt="phone-book" width={320} />
       </ContainerFlex>
-      <Btn variant="contained" size="large" type="button">
-        <NavLink
-          style={{ color: 'currentColor', textDecoration: 'none' }}
+      <Btn>
+        <Button
+          component={NavLink}
           to="/register"
+          variant="contained"
+          size="large"
+          type="button"
         >
           Get started
-        </NavLink>
+        </Button>
       </Btn>
     </Container>
   );
