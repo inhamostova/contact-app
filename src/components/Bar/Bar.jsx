@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 
 export const Bar = () => {
   const { isLoggedIn } = useAuth();
@@ -19,9 +20,16 @@ export const Bar = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
               <NavLink
-                style={{ color: 'inherit', textDecoration: 'none' }}
+                style={{
+                  color: 'inherit',
+                  textDecoration: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                }}
                 to="/"
               >
+                <ContactPhoneIcon />
                 Home
               </NavLink>
               {isLoggedIn && (

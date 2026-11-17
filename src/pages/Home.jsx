@@ -1,8 +1,12 @@
+import { Features } from 'components/Features/Features';
+import { WelcomeHero } from 'components/WelcomeHero/WelcomeHero';
+
 const Home = () => {
   return (
-    <div>
-      <h1>Welcome to your contacts APP!!!</h1>
-    </div>
+    <>
+      <WelcomeHero />
+      <Features />
+    </>
   );
 };
 
