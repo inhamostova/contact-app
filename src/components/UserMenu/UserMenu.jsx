@@ -15,7 +15,10 @@ export const UserMenu = () => {
         {userName}
       </Typography>
       <Button
-        style={{ backgroundColor: '#ffffff', color: 'rgb(25, 118, 210)' }}
+        sx={{
+          backgroundColor: 'background.default',
+          color: 'primary.main',
+        }}
         variant="outlined"
         onClick={() => dispatch(logout())}
       >

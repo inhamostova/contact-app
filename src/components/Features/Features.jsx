@@ -7,17 +7,17 @@ export const Features = () => {
   return (
     <List>
       <Item>
-        <PeopleIcon sx={{ color: 'rgb(25, 118, 210)' }} />
+        <PeopleIcon sx={{ color: 'primary.main' }} />
         <Title>Easy management</Title>
         <Desc>Додавання, редагування та видалення контактів.</Desc>
       </Item>
       <Item>
-        <VerifiedUserIcon sx={{ color: 'rgb(25, 118, 210)' }} />
+        <VerifiedUserIcon sx={{ color: 'primary.main' }} />
         <Title>Private & secure</Title>
         <Desc>Особиста колекція контактів.</Desc>
       </Item>
       <Item>
-        <SearchIcon sx={{ color: 'rgb(25, 118, 210)' }} />
+        <SearchIcon sx={{ color: 'primary.main' }} />
         <Title>Quick search</Title>
         <Desc>Швидкий пошук потрібного контакту.</Desc>
       </Item>

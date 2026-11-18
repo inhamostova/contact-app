@@ -17,7 +17,7 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 400,
-  bgcolor: 'background.paper',
+  bgcolor: 'background.default',
   border: '2px solid #000',
   borderRadius: '10px',
   boxShadow: 24,
@@ -32,11 +32,12 @@ export const ContactItem = ({ contact }) => {
   return (
     <Box
       sx={{
-        backgroundColor: 'aliceblue',
+        backgroundColor: 'background.paper',
         padding: '10px 20px',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        borderRadius: '10px',
       }}
     >
       <Box>

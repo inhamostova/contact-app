@@ -14,7 +14,7 @@ export const ContainerFlex = styled.div`
 
 export const Wrapper = styled.div`
   font-family: 'Roboto', sans-serif;
-  color: #2c2c2c;
+  color: ${({ theme }) => theme.palette.text.primary};
 `;
 
 export const Btn = styled.div`

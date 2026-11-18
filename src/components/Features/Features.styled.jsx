@@ -13,8 +13,8 @@ export const List = styled.ul`
 export const Item = styled.li`
   flex-basis: calc((100% - 2 * 32px) / 3);
   font-family: 'Roboto', sans-serif;
-  color: #2c2c2c;
-  background-color: rgba(222, 232, 248, 0.7);
+  color: ${({ theme }) => theme.palette.text.primary};
+  background-color: ${({ theme }) => theme.palette.background.paper};
   padding: 8px 20px;
   border-radius: 10px;
 `;
