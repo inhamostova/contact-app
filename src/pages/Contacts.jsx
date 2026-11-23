@@ -6,6 +6,7 @@ import Fade from '@mui/material/Fade';
 import { useState } from 'react';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
+import { Filter } from 'components/Filter/Filter';
 
 const style = {
   position: 'absolute',
@@ -52,6 +53,7 @@ const Contacts = () => {
           </Box>
         </Fade>
       </Modal>
+      <Filter />
       <ContactList />
     </div>
   );
